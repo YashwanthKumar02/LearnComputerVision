@@ -7,10 +7,8 @@ cv.imshow('Cat', img)
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY) #this is a 1-channel grayscale image
 cv.imshow('Gray', gray)
 
-# Blur
-blur = cv.GaussianBlur(img, (15,15), cv.BORDER_DEFAULT) #this is a blurred image
+#Blur
+blur = cv.GaussianBlur(img, (7,7), cv.BORDER_DEFAULT)
 cv.imshow('Blur', blur)
-
-
 
 cv.waitKey(0)
