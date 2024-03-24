@@ -11,4 +11,20 @@ cv.imshow('Gray', gray)
 blur = cv.GaussianBlur(img, (7,7), cv.BORDER_DEFAULT)
 cv.imshow('Blur', blur)
 
+#Edge Cascade
+canny = cv.Canny(blur, 125, 175) #canny edge detection
+cv.imshow('Canny Edges', canny)
+
+#Dilating the image
+dilated = cv.dilate(canny, (7,7), iterations=1)
+cv.imshow('Dilated', dilated)
+
+#Eroding
+eroding = cv.erode(dilated, (7,7), iterations=1)
+cv.imshow('Eroded', eroding)
+
+#Resize
+resized = cv.resize(img, (500,500), interpolation=cv.INTER_AREA)
+cv.imshow('Resized', resized)
+
 cv.waitKey(0)
